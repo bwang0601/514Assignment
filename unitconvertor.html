@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Units Converter</title>
+  <style>
+body {background-color: #ea7b0b;}
+h1 {font-size: 50px; font-family: showcard gothic; color: green; background-color: yellow;}
+p {margin-left: 200px;}
+p2 {margin-left: 300px;}
+h2 {font-size: 40px; font-family: rockwell; color: #1eeeee;}
+h3 {font-size: 40px; font-family: Algerian; color: red;}
+  </style>
+
+<script type="text/javascript">
+function unitconverter(x, y) {
+  var x = document.getElementById("inputvalue").value;
+  var y = document.getElementById("outputvalue").value;
+  var unitsin = document.getElementById("inunits").value;
+  var unitsout = document.getElementById("outunits").value;
+  var output;
+
+// Inch converter
+  if (unitsin == "inches英寸" && unitsout == "feet英尺"){
+    output = x +" "+ unitsin + "=" + x/12 + "" + unitsout;
+  } else if (unitsin == "inches英寸" && unitsout == "yards码"){
+    output = x +" "+ unitsin + "=" + x/36 + "" + unitsout;
+  } else if (unitsin == "inches英寸" && unitsout == "miles英里"){
+    output = x +" "+ unitsin + "=" + x/63360 + "" + unitsout;
+  } else if (unitsin == "inches英寸" && unitsout == "centimeters厘米"){
+    output = x +" "+ unitsin + "=" + x/(1/2.54) + "" + unitsout;
+  } else if (unitsin == "inches英寸" && unitsout == "Meters米"){
+    output = x +" "+ unitsin + "=" + x/(1/0.0254) + "" + unitsout;
+  } else if (unitsin == "inches英寸" && unitsout == "kilometers千米"){
+    output = x +" "+ unitsin + "=" + x/39370.079 + "" + unitsout;}
+// Foot converter
+  if (unitsin == "feet英尺" && unitsout == "inches英寸"){
+    output = x +" "+ unitsin + "=" + x*12 + "" + unitsout;
+  } else if (unitsin == "feet英尺" && unitsout == "yards码"){
+    output = x +" "+ unitsin + "=" + x/3 + "" + unitsout;
+  } else if (unitsin == "feet英尺" && unitsout == "miles英里"){
+    output = x +" "+ unitsin + "=" + x/5280 + "" + unitsout;
+  } else if (unitsin == "feet英尺" && unitsout == "centimeters厘米"){
+    output = x +" "+ unitsin + "=" + x*30.48 + "" + unitsout;
+  } else if (unitsin == "feet英尺" && unitsout == "Meters米"){
+    output = x +" "+ unitsin + "=" + x*0.3048 + "" + unitsout;
+  } else if (unitsin == "feet英尺" && unitsout == "kilometers千米"){
+    output = x +" "+ unitsin + "=" + x*0.0003048 + "" + unitsout;}
+// Yards converter
+  if (unitsin == "yards码" && unitsout == "inches英寸"){
+    output = x +" "+ unitsin + "=" + x*36 + "" + unitsout;
+  } else if (unitsin == "yards码" && unitsout == "feet英尺"){
+    output = x +" "+ unitsin + "=" + x*3 + "" + unitsout;
+  } else if (unitsin == "yards码" && unitsout == "miles英里"){
+    output = x +" "+ unitsin + "=" + x*0.000568182 + "" + unitsout;
+  } else if (unitsin == "yards码" && unitsout == "centimeters厘米"){
+    output = x +" "+ unitsin + "=" + x*91.44 + "" + unitsout;
+  } else if (unitsin == "yards码" && unitsout == "Meters米"){
+    output = x +" "+ unitsin + "=" + x*0.9144 + "" + unitsout;
+  } else if (unitsin == "yards码" && unitsout == "kilometers千米"){
+    output = x +" "+ unitsin + "=" + x*0.0009144 + "" + unitsout;}
+// Miles converter
+  if (unitsin == "miles英里" && unitsout == "inches英寸"){
+    output = x +" "+ unitsin + "=" + x*63360 + "" + unitsout;
+  } else if (unitsin == "miles英里" && unitsout == "feet英尺"){
+    output = x +" "+ unitsin + "=" + x*5280 + "" + unitsout;
+  } else if (unitsin == "miles英里" && unitsout == "yards码"){
+    output = x +" "+ unitsin + "=" + x*1760 + "" + unitsout;
+  } else if (unitsin == "miles英里" && unitsout == "centimeters厘米"){
+    output = x +" "+ unitsin + "=" + x*160934.4 + "" + unitsout;
+  } else if (unitsin == "miles英里" && unitsout == "Meters米"){
+    output = x +" "+ unitsin + "=" + x*1609.344 + "" + unitsout;
+  } else if (unitsin == "miles英里" && unitsout == "kilometers千米"){
+    output = x +" "+ unitsin + "=" + x*1.60934 + "" + unitsout;}
+// Centimeters converter
+  if (unitsin == "centimeters厘米" && unitsout == "inches英寸"){
+    output = x +" "+ unitsin + "=" + x/2.54 + "" + unitsout;
+  } else if (unitsin == "centimeters厘米" && unitsout == "feet英尺"){
+    output = x +" "+ unitsin + "=" + x/30.48 + "" + unitsout;
+  } else if (unitsin == "centimeters厘米" && unitsout == "yards码"){
+    output = x +" "+ unitsin + "=" + x/91.44 + "" + unitsout;
+  } else if (unitsin == "centimeters厘米" && unitsout == "miles英里"){
+    output = x +" "+ unitsin + "=" + x/160934.4 + "" + unitsout;
+  } else if (unitsin == "centimeters厘米" && unitsout == "Meters米"){
+    output = x +" "+ unitsin + "=" + x/100+ "" + unitsout;
+  } else if (unitsin == "centimeters厘米" && unitsout == "kilometers千米"){
+    output = x +" "+ unitsin + "=" + x/100000 + "" + unitsout;}
+// Meters converter
+  if (unitsin == "Meters米" && unitsout == "inches英寸"){
+    output = x +" "+ unitsin + "=" + x*39.37+ "" + unitsout;
+  } else if (unitsin == "Meters米" && unitsout == "feet英尺"){
+    output = x +" "+ unitsin + "=" + x*3.28084+ "" + unitsout;
+  } else if (unitsin == "Meters米" && unitsout == "yards码"){
+    output = x +" "+ unitsin + "=" + x*1.09361 + "" + unitsout;
+  } else if (unitsin == "Meters米" && unitsout == "miles英里"){
+    output = x +" "+ unitsin + "=" + x/1609.344 + "" + unitsout;
+  } else if (unitsin == "Meters米" && unitsout == "centimeters厘米"){
+    output = x +" "+ unitsin + "=" + x*100 + "" + unitsout;
+  } else if (unitsin == "Meters米" && unitsout == "kilometers千米"){
+    output = x +" "+ unitsin + "=" + x/1000 + "" + unitsout;}
+// Kilometers converter
+  if (unitsin == "kilometers千米" && unitsout == "inches英寸"){
+    output = x +" "+ unitsin + "=" + x*39370.079 + "" + unitsout;
+  } else if (unitsin == "kilometers千米" && unitsout == "feet英尺"){
+    output = x +" "+ unitsin + "=" + x*3280.84 + "" + unitsout;
+  } else if (unitsin == "kilometers千米" && unitsout == "yards码"){
+    output = x +" "+ unitsin + "=" + x*1093.613 + "" + unitsout;
+  } else if (unitsin == "kilometers千米" && unitsout == "miles英里"){
+    output = x +" "+ unitsin + "=" + x*0.621371 + "" + unitsout;
+  } else if (unitsin == "kilometers千米" && unitsout == "centimeters厘米"){
+    output = x +" "+ unitsin + "=" + x*100000 + "" + unitsout;
+  } else if (unitsin == "kilometers千米" && unitsout == "Meters米"){
+    output = x +" "+ unitsin + "=" + x*1000 + "" + unitsout;
+  } else if (unitsin == unitsout){
+    output = x + " "+ unitsin +"="+ x +"" + unitsout
+  }
+  document.getElementById("outputvalue").innerHTML = output;
+  }
+</script>
+</head>
+
+<body>
+<h1>Distance Converter</h1>
+
+<div>
+<h3><label id="fromlabel">Convert From:</label></h3>
+<select id="inunits"> 
+    <option id="inches英寸">inches英寸</option>
+    <option id="feet英尺">feet英尺</option>
+    <option id="yards码">yards码</option>
+    <option id="miles英里">miles英里</option>
+    <option id="centimeters厘米">centimeters厘米</option>
+    <option id="Meters米">Meters米</option>
+    <option id="kilometers千米">kilometers千米</option>   
+  </select>
+</div>
+<br>
+ 
+<div>
+  <h3><label id="tolabel">Convert To:</label></h3>
+<select id="outunits"> 
+    <option id="inches英寸">inches英寸</option>
+    <option id="feet英尺">feet英尺</option>
+    <option id="yards码">yards码</option>
+    <option id="miles英里">miles英里</option>
+    <option id="centimeters厘米">centimeters厘米</option>
+    <option id="Meters米">Meters米</option>
+    <option id="kilometers千米">kilometers千米</option>
+</select>
+</div>
+
+<br>
+<div>
+<input type="text" id="inputvalue" placeholder="Type here">
+<output type="text" id="outputvalue" placeholder="Answer">
+</div>
+
+<div>
+  <button id="myBtn" onclick="unitconverter()">Calculate</button>
+</div>
+  </body>
+</html>
