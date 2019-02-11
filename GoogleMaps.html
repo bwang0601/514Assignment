@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interactive Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+      *element that contains the map. */
+      #map {
+        height:100%
+      }
+      /* Optional: makes the sample page fill the window. */
+      html, body {
+        height:100%;
+        margin:0%;
+        padding:0%;
+      }
+      h1 {font-size: 30px; font-family: showcard gothic; color: green; background-color: yellow;}
+      h2 {font-size: 20px; font-family: rockwell; color: brown;}
+      h3 {font-size: 20px; font-family: Algerian; color: red;}
+    </style> 
+  </head>
+  <body>
+    <h1><span class="screenname">Interactive Page with Google Maps</h1>
+    <h3> Course: CEEN 514, Assignment 4, published: 02/10/2019 </h3>
+    <div id="map"></div>
+    <script>
+     function initMap(){ 
+      var myhome = {lat:34.25949, lng:108.94701} 
+      var GWGP = {lat:34.218433, lng:108.964154}
+      var HMuseum = {lat:34.224514, lng:108.955210}
+      var TCWarrioir = {lat:34.384249, lng:109.278496}
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 11,
+        center: myhome
+     });
+      var myhomeString ='<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1>Myhometown</h1>'+
+            '<h2>My hometwon Xian is the capital of Shaanxi Province, China. It is one of the oldest cities in China, and the oldest of the Four Great Ancient Capitals, having held the position under several of the most important dynasties in Chinese history. Xian is the starting point of the Silk Road. <p>Only ten million people live here</p></h2>';        
+      var infowindow = new google.maps.InfoWindow({
+        content: myhomeString
+      });
+      var marker = new google.maps.Marker({
+        position: myhome,
+        map: map,
+        title: 'myhome'
+      });
+       marker.addListener('click', function() {
+        infowindow.open(map,marker);
+      });
+      
+       var GWGPString ='<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1>Giant Wild Goose Pagoda</h1>'+
+            '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Giant_Wild_Goose_Pagoda.jpg/1280px-Giant_Wild_Goose_Pagoda.jpg" style="width: 100%; height: 50%;">'+
+            '<h2>Giant Wild Goose Pagoda or Big Wild Goose Pagoda (Chinese: 大雁塔), is a Buddhist pagoda located in southern Xian, Shaanxi province, China. It was built in 652 during the Tang dynasty.<p>This site was added to the World Heritage List on June 22, 2014.</p></h2>'+
+          '<h3><p>Attribution: Giant Wild Goose Pagoda, <a href="https://en.wikipedia.org/wiki/Giant_Wild_Goose_Pagoda">'+
+            'https://en.wikipedia.org/wiki/Giant_Wild_Goose_Pagoda</a> ';        
+      var infowindow2 = new google.maps.InfoWindow({
+        content: GWGPString
+      });
+      var marker2 = new google.maps.Marker({
+        position: GWGP,
+        map: map,
+        title: 'Giant Wild Goose Pagoda'
+      });
+       marker2.addListener('click', function() {
+        infowindow2.open(map,marker2);
+      });
+       var HMuseumString ='<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1>Shaanxi History Museum</h1>'+
+            '<img src="http://www.tour-beijing.com/blog/wp-content/uploads/museum-1.jpg" style="width: 100%; height: 50%;">'+
+            '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Xi%27anviewpic4.jpg/400px-Xi%27anviewpic4.jpg" style="width: 25%; height: 60%;">'+
+           '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Xi%27anviewpic7.jpg/400px-Xi%27anviewpic7.jpg" style="width: 25%; height: 60%;">'+
+           '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Gold_monster.jpg/273px-Gold_monster.jpg" style="width: 25%; height: 50%;">'+
+           '<img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Gilt_silver_jar_with_pattern_of_dancing_horses.jpg" style="width: 25%; height: 50%;">'+
+            '<h2>Shaanxi was the ancient imperial capital of China, having been the seat of more than 13 feudal dynasties, including the Zhou, Qin, Han, and Tang dynasties. The province is rich in cultural relics. With the completion of the Shaanxi History Museum, it collected over 370,000 precious relics which were unearthed in Shaanxi Province, including bronze wares, pottery figures, and mural paintings in Tang tombs.</p></h2>'+
+          '<h3><p>Attribution: Shaanxi History Museum, <a href="https://en.wikipedia.org/wiki/Shaanxi_History_Museum">'+
+            'https://en.wikipedia.org/wiki/Shaanxi_History_Museum</a> ';         
+      var infowindow3 = new google.maps.InfoWindow({
+        content: HMuseumString
+      });
+      var marker3 = new google.maps.Marker({
+        position: HMuseum,
+        map: map,
+        title: 'Shaanxi History Museum'
+      });
+       marker3.addListener('click', function() {
+        infowindow3.open(map,marker3);
+      });
+       var TCWarrioirString ='<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1>Terra-Cotta Army</h1>'+
+            '<img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Terracota_warriors_002.jpg" style="width: 50%; height: 50%;">'+
+            '<img src="https://www.tripsavvy.com/thmb/4VvkAg7aewYAV51mt8onwEUJSoE=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/157018214-56a39bf23df78cf7727e2ff5.jpg" style="width: 50%; height: 50%;">'+
+            '<h2>The Terracotta Army is a collection of terracotta sculptures depicting the armies of Qin Shi Huang, the first Emperor of China. It is a form of funerary art buried with the emperor in 210–209 BCE with the purpose of protecting the emperor in his afterlife.</p></h2>'+
+          '<h3><p>Attribution: Terra-Cotta Army, <a href="https://en.wikipedia.org/wiki/Terracotta_Army">'+
+            'https://en.wikipedia.org/wiki/Terracotta_Army</a> ';        
+      var infowindow4 = new google.maps.InfoWindow({
+        content: TCWarrioirString
+      });
+      var marker4 = new google.maps.Marker({
+        position: TCWarrioir,
+        map: map,
+        title: 'Terra-Cotta Warriors'
+      });
+       marker4.addListener('click', function() {
+        infowindow4.open(map,marker4);
+      });
+     }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXS6eLxCWdf31JokswS3GbO582iuY0PqI&callback=initMap" async defer></script>
+      
+  </body>
+</html>
